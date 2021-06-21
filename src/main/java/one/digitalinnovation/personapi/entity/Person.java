@@ -29,7 +29,6 @@ public class Person {
     @Column(nullable = false, unique = true)
     private String cpf;
 
-    @Column
     private LocalDate birthDate;
 
     @OneToMany(fetch = FetchType.LAZY,
