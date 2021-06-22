@@ -1,7 +1,7 @@
-#Digital Innovation One
+<h1>Digital Innovation One</h1>
 
 &nbsp;
-###Para executar o projeto no terminal, digite:
+<h3>Para executar o projeto no terminal, digite:</h3>
 
 ```shell script
 mvn spring-boot:run 
@@ -14,5 +14,5 @@ http://localhost:8080/api/v1/people
 ```
 
 &nbsp;
-###Link no Heroku:
-**https://fernanda-peopleapi-live.herokuapp.com/api/v1/people**
+<h3>Link no Heroku:</h3>
+https://fernanda-peopleapi-live.herokuapp.com/api/v1/people
