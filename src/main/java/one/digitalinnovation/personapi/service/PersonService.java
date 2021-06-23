@@ -1,34 +1,32 @@
 package one.digitalinnovation.personapi.service;
 
-import lombok.AllArgsConstructor;
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
 import one.digitalinnovation.personapi.entity.Person;
+import one.digitalinnovation.personapi.mapper.PersonMapper;
+import one.digitalinnovation.personapi.dto.request.PersonDTO;
+import one.digitalinnovation.personapi.repository.PersonRepository;
 import one.digitalinnovation.personapi.dto.response.MessageResponseDTO;
 import one.digitalinnovation.personapi.exception.PersonNotFoundException;
-import one.digitalinnovation.personapi.mapper.PersonMapper;
-import one.digitalinnovation.personapi.repository.PersonRepository;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.nio.file.ProviderNotFoundException;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
+
+import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class PersonService {
 
-    private final PersonRepository personRepository;
+    private PersonRepository personRepository;
     private final PersonMapper personMapper = PersonMapper.INSTANCE;
-
 
     public MessageResponseDTO createPerson(PersonDTO personDTO) {
         Person personToSave = personMapper.toModel(personDTO);
         Person savedPerson = personRepository.save(personToSave);
 
-        return createMessageResponseDTO(savedPerson.getId());
+        return createMessageResponseDTO(savedPerson.getId(), "Created Person with ID ");
     }
 
     public List<PersonDTO> listAll() {
@@ -56,13 +54,13 @@ public class PersonService {
         Person personToUpdate = personMapper.toModel(personDTO);
         Person updatedPerson = personRepository.save(personToUpdate);
 
-        return createMessageResponseDTO(updatedPerson.getId());
+        return createMessageResponseDTO(updatedPerson.getId(), "Updated Person with ID ");
     }
 
-    private MessageResponseDTO createMessageResponseDTO(Long id) {
+    private MessageResponseDTO createMessageResponseDTO(Long id, String msg) {
         return MessageResponseDTO
                 .builder()
-                .message("Updated Person with ID " + id)
+                .message(msg + id)
                 .build();
     }
 

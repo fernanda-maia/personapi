@@ -1,7 +1,6 @@
 package one.digitalinnovation.personapi.dto.request;
 
 import java.util.List;
-import java.time.LocalDate;
 
 import lombok.Data;
 import lombok.Builder;
@@ -11,6 +10,8 @@ import lombok.AllArgsConstructor;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.br.CPF;
 
 @Data
 @Builder
@@ -29,6 +30,7 @@ public class PersonDTO {
     private String lastName;
 
     @NotEmpty
+    @CPF
     private String cpf;
 
     private String birthDate;
