@@ -1,6 +1,6 @@
-package one.digitalinnovation.personapi.dto.request;
+package one.digitalinnovation.personapi.model.dto.request;
 
-import one.digitalinnovation.personapi.enums.PhoneType;
+import one.digitalinnovation.personapi.util.enums.PhoneType;
 
 import lombok.Data;
 import lombok.Builder;

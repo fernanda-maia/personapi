@@ -1,8 +1,7 @@
 package one.digitalinnovation.personapi.utils;
 
-import one.digitalinnovation.personapi.dto.request.PersonDTO;
-import one.digitalinnovation.personapi.dto.request.PhoneDTO;
-import one.digitalinnovation.personapi.entity.Person;
+import one.digitalinnovation.personapi.model.dto.request.PersonDTO;
+import one.digitalinnovation.personapi.model.entity.Person;
 
 import java.time.LocalDate;
 import java.util.Collections;

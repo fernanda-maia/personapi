@@ -1,4 +1,4 @@
-package one.digitalinnovation.personapi.dto.request;
+package one.digitalinnovation.personapi.model.dto.request;
 
 import java.util.List;
 

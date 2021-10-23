@@ -1,6 +1,6 @@
-package one.digitalinnovation.personapi.entity;
+package one.digitalinnovation.personapi.model.entity;
 
-import one.digitalinnovation.personapi.enums.PhoneType;
+import one.digitalinnovation.personapi.util.enums.PhoneType;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
